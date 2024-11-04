@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:30:18 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 15:47:20 by lgirerd          ###   ########.fr       */
+/*   Created: 2024/11/04 15:34:11 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/11/04 15:46:32 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+#include <stdio.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	char	*p;
+	unsigned long	i;
 
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			p = ((char *)(s + i));
+	while (s1[i] == s2[i] && i < n)
 		i++;
-	}
-	return (p);
+	return (s1[i] - s2[i]);
 }
