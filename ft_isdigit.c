@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 12:52:17 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 13:28:32 by lgirerd          ###   ########.fr       */
+/*   Created: 2024/11/04 13:09:35 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/11/04 13:17:27 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int a)
 {
-	char	*low;
-	char	*upp;
 	int		i;
 
-	low = "abcdefghijklmnopqrstuvwxyz";
-	upp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	i = 0;
-	while (i <= 26)
+	while (i <= 9)
 	{
-		if (c == low[i] || c == upp[i])
+		if (a == i)
 			return (1);
 		i++;
 	}
