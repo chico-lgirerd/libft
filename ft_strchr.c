@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:59:56 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 14:46:55 by lgirerd          ###   ########.fr       */
+/*   Created: 2024/11/04 14:15:56 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/11/04 14:38:25 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(char c)
+char	*ft_strchr(char *s, int c)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return (s + i);
+		i++;
+	}
+	return ((void *)(0));
 }
 
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%s", ft_strchr("Tutorial", 'o'));
+	return (0);
+}
