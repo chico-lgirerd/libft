@@ -6,7 +6,7 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:19:20 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 13:28:21 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/04 13:44:34 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ int	ft_isalpha(int c)
 
 int	ft_isalnum(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));	
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
