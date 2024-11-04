@@ -6,18 +6,20 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:56:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 13:58:27 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/04 15:13:48 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stdio.h>
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	int		i;
+	size_t	size;
 
 	i = 0;
 	while (str[i])
-	{
 		i++;
-	}
-	return (i);
+	size = sizeof(char) * i;
+	return (size);
 }

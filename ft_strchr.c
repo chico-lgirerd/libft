@@ -6,11 +6,11 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:15:56 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 14:38:25 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/04 15:16:57 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -18,16 +18,8 @@ char	*ft_strchr(char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == c)
-			return (s + i);
+			return ((char *)(s + i));
 		i++;
 	}
 	return ((void *)(0));
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("%s", ft_strchr("Tutorial", 'o'));
-	return (0);
 }
