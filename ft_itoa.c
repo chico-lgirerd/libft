@@ -6,10 +6,11 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:36:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 19:20:08 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 23:18:23 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
 void	swap(char *a, char *b)
@@ -28,7 +29,7 @@ char	*reverse(char *str)
 	char	tmp;
 
 	i = 0;
-	j = ft_strlen(str) - 1;
+	j = strlen(str) - 1;
 	while (j > i)
 	{
 		tmp = str[i];
@@ -46,8 +47,8 @@ char	*ft_itoa(int nb)
 	int		i;
 	int		sign;
 
-	res = malloc(sizeof(char) * 12);
-	i = 0;
+	res = malloc(sizeof(char) * 13);
+	i = 1;
 	sign = 0;
 	if (res == NULL)
 		return (NULL);
@@ -58,6 +59,7 @@ char	*ft_itoa(int nb)
 		sign = 1;
 		nb = -nb;
 	}
+	res[0] = '\0';
 	while (nb)
 	{
 		res[i] = (nb % 10) + '0';
