@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:15:51 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 16:29:11 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 16:39:43 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	slen = ft_strlen(s);
 	res = malloc(slen * sizeof(char));
-	if (res == NULL)
+	if (res == NULL || f == NULL)
 		return ((void *)(0));
 	i = 0;
 	while (i < slen)
