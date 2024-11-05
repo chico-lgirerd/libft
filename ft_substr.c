@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:24:48 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 13:52:57 by lgirerd          ###   ########.fr       */
+/*   Created: 2024/11/05 13:29:48 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/11/05 13:39:09 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+size_t	ft_strlen(const char *s)
 {
-	int		total_size;
-	int		*tab;
 	size_t	i;
 
 	i = 0;
-	if (nmemb == 0 || size == 0)
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*sub;
+	size_t	i;
+
+	i = 0;
+	if (len == 0 || start > ft_strlen(s))
 		return ((void *)(0));
-	total_size = size * nmemb;	
-	if (total_size / size != nmemb)
+	sub = malloc(len * sizeof(char));
+	if (sub == NULL)
 		return ((void *)(0));
-	tab = malloc(total_size * sizeof(int));
-	if (tab == NULL)
-		return ((void *)(0));
-	while (i < nmemb)
+	while (i < len)
 	{
-		tab[i] = 0;
+		sub[i] = s[start + i];
 		i++;
 	}
-	return ((void *)tab);
+	return (sub);
 }

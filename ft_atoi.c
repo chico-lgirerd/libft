@@ -6,7 +6,7 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:15:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 18:26:04 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/05 13:37:46 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ int	ft_atoi(char *str)
 		else
 			return (count_numbers(str + i));
 	}
-	else
-		return (0);
+	return (0);
 }

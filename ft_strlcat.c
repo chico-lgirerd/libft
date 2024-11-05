@@ -6,7 +6,7 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:28:07 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 18:37:28 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/05 13:38:08 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ size_t	ft_strlen(const char *str)
 	size = sizeof(char) * i;
 	return (size);
 }
-
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -44,15 +43,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[j] = '\0';
 	return (d_len + ft_strlen(src));
-}
-
-
-#include <string.h>
-int	main(void)
-{
-	char	s1[] = "coucou";
-	char	s2[] = "lesamis";
-
-	printf("%zu\n", ft_strlcat(s1, s2, 2)); // on attend 9
-	return (0);
 }
