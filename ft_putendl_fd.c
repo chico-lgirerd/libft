@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:08:53 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:11:14 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 23:07:55 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\0', fd);
+	ft_putchar_fd('\n', fd);
 }
