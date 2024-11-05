@@ -6,14 +6,14 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:01:31 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 14:09:28 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/05 14:37:46 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(char const *s)
 {
 	size_t	i;
 
@@ -26,8 +26,8 @@ size_t	ft_strlen(char *s)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -45,5 +45,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
-	return (res)
+	return (res);
 }
+
+/*
+int	main()
+{
+	char *test = ft_strjoin("Hello", "World");
+	printf("%s", test);
+	free(test);
+}*/
