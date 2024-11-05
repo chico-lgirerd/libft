@@ -6,7 +6,7 @@
 /*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:29:48 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 13:39:09 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/05 13:58:21 by lgirerd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (sub);
 }
+
+/*
+int main()
+{
+    char src[] = "substr function Implementation";
+
+    char* dest = ft_substr(src, 1, 10);
+
+    printf("%s\n", dest);
+    free(dest);
+
+    return 0;
+}*/
