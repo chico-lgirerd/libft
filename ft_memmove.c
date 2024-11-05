@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:17:15 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:18:47 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 20:24:54 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	csrc = (char *)src;
 	cdest = (char *)dest;
-	if (cdest > csrc + n)
+	if (cdest > csrc)
 	{
-		while (n--)
-			cdest[n - 1] = csrc[n - 1];
+		while (n > 0)
+		{
+			n--;
+			cdest[n] = csrc[n];
+		}
 	}
 	else
 	{
