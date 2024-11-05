@@ -3,23 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:09:35 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/04 13:17:27 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/05 19:54:24 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
+int	ft_isdigit(int c)
 {
-	int		i;
-
-	i = 0;
-	while (i <= 9)
-	{
-		if (a == i)
-			return (1);
-		i++;
-	}
+	if (c >= 48 && c <= 57)
+		return (1);
 	return (0);
 }

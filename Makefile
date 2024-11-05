@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/22 13:41:01 by tiaperei          #+#    #+#              #
-#    Updated: 2024/11/05 19:04:20 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/11/05 19:18:13 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,8 +53,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) libft.h
-	cc $(OBJECTS) -o $(NAME)
+$(NAME): $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
+
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJECTS)

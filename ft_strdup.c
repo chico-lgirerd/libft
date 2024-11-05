@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:17:14 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:45:49 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 19:23:04 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *str)
 	return (size);
 }
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	size_t	i;
 	char	*d;

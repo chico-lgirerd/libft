@@ -6,13 +6,13 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:08:37 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:43:33 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 19:51:36 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 	char	*cs;
@@ -24,5 +24,4 @@ void	*ft_bzero(void *s, size_t n)
 		cs[i] = '\0';
 		i++;
 	}
-	return (cs);
 }

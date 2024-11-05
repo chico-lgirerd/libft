@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:36:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 19:08:36 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 19:20:08 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,4 @@ char	*ft_itoa(int nb)
 	if (sign)
 		res[i] = '-';
 	return (reverse(res));
-}
-
-int	main(void)
-{
-	printf("%s\n", ft_itoa(-195));
-	return (0);
 }
