@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 16:19:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:04:03 by lgirerd          ###   ########lyon.fr   */
+/*   Created: 2024/11/05 18:02:49 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/11/05 18:06:44 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-int		ft_atoi(char *str);
-size_t	ft_strlen(const char *str);
-void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		*s++;
+	}
+}
