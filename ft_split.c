@@ -6,10 +6,11 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:22:16 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 15:29:15 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 16:34:06 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 void    *ft_strcpy(char *dest, char *src)
 {
     int i;
@@ -40,4 +41,4 @@ int strchr(const char *s, char c)
 char    **ft_split(char const *s, char c)
 {
 
-}
+}*/
