@@ -6,11 +6,11 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/22 13:41:01 by tiaperei          #+#    #+#              #
-#    Updated: 2024/11/05 19:03:03 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/11/05 19:04:20 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = libft.a 
 
 SOURCES = ft_atoi.c\
 		ft_bzero.c\
