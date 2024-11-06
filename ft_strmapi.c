@@ -14,12 +14,12 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		slen;
-	char	*res;
+	unsigned int	i;
+	size_t			slen;
+	char			*res;
 
 	slen = ft_strlen(s);
-	res = malloc(slen * sizeof(char));
+	res = malloc(slen + 1 * sizeof(char));
 	if (res == NULL || f == NULL)
 		return ((void *)(0));
 	i = 0;
@@ -28,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		res[i] = f(i, s[i]);
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }
