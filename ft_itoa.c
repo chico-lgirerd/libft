@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:36:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/06 15:03:39 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/06 15:32:17 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,35 +41,6 @@ char	*reverse(char *str)
 	return (str);
 }
 
-/*
-char	*ft_itoa(int nb)
-{
-	char	*res;
-	int		i;
-	int		sign;
-
-	res = malloc(sizeof(char) * 13);
-	i = 0;
-	if (res == NULL)
-		return (NULL);
-	if (nb == -2147483648)
-		return ("-2147483648");
-	if (nb < 0)
-	{
-		sign = 1;
-		nb = -nb;
-	}
-	while (nb)
-	{
-		res[i] = (nb % 10) + '0';
-		nb /= 10;
-		i++;
-	}
-	if (sign)
-		res[i] = '-';
-	return (reverse(res));
-}*/
-
 char	*ft_itoa(int nb)
 {
 	char	*res;
@@ -82,14 +53,11 @@ char	*ft_itoa(int nb)
 	if (res == NULL)
 		return (NULL);
 	i = 0;
-	sign = 0;
+	sign = (nb < 0);
 	if (nb == 0)
 		return ("0");
-	if (nb < 0)
-	{
+	if (sign)
 		nb = -nb;
-		sign = 1;
-	}
 	while (nb)
 	{
 		res[i++] = (nb % 10) + '0';
