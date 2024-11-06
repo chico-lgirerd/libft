@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:29:48 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 21:56:06 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/06 16:08:21 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,35 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	size_t	i;
+	char			*sub;
+	unsigned int	i;
+	unsigned int	j;
 
-	i = 0;
+	i = start;
+	j = 0;
 	if (len == 0 || start > ft_strlen(s))
-		return ((void *)(0));
-	sub = malloc(len * sizeof(char));
+		return ("");
+	sub = malloc(len * sizeof(char) + 1);
 	if (sub == NULL)
-		return ((void *)(0));
-	while (i < len)
+		return ("");
+	while (i < start + len)
 	{
-		sub[i] = s[start + i];
+		sub[j] = s[i];
 		i++;
+		j++;
 	}
+	sub[j] = '\0';
 	return (sub);
 }
 
 /*
-int main()
+int main(void)
 {
-    char src[] = "substr function Implementation";
+	char src[] = "lorem ipsum dolor";
 
-    char* dest = ft_substr(src, 1, 10);
+	char *dest = ft_substr(src, 0, 10);
+	printf("%s\n", dest);
+	free(dest);
 
-    printf("%s\n", dest);
-    free(dest);
-
-    return 0;
+	return 0;
 }*/
