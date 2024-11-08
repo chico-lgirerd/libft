@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 19:56:08 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 20:35:40 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,4 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+t_list	*ft_lstnew(void *content);
