@@ -6,13 +6,16 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:59:56 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 15:05:13 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 15:09:00 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(char c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c -= 32;
 	return (c);
+
 }
