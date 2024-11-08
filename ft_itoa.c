@@ -6,20 +6,25 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:36:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/06 15:32:17 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 17:19:58 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-void	swap(char *a, char *b)
+int	num_len(int nb)
 {
-	char	t;
+	int	len;
 
-	t = *a;
-	*a = *b;
-	*b = t;
+	len = 0;
+	if (nb <= 0)
+		len = 1;
+	while (nb)
+	{
+		nb /= 10;
+		len++;
+	}
+	return (len);
 }
 
 char	*reverse(char *str)
@@ -29,7 +34,7 @@ char	*reverse(char *str)
 	char	tmp;
 
 	i = 0;
-	j = strlen(str) - 1;
+	j = ft_strlen(str) - 1;
 	while (j > i)
 	{
 		tmp = str[i];
@@ -46,16 +51,18 @@ char	*ft_itoa(int nb)
 	char	*res;
 	int		i;
 	int		sign;
+	int		len;
 
 	if (nb == -2147483648)
-		return ("-2147483648");
-	res = malloc(sizeof(char) * 12);
+		return (ft_strdup("-2147483648"));
+	len = num_len(nb);
+	res = malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
 	i = 0;
 	sign = (nb < 0);
 	if (nb == 0)
-		return ("0");
+		res[i++] = '0';
 	if (sign)
 		nb = -nb;
 	while (nb)
