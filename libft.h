@@ -14,6 +14,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+typedef struct	s_list 
+{
+	void			*content;
+	struct s_list	*next;
+} t_list;
+
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
 void	ft_putchar_fd(char c, int fd);
