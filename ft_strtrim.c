@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:39:47 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:47:16 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 12:34:33 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,23 @@ int	ft_strstrchr(const char *set, const char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
-	int		i;
-	int		j;
+	int		start;
+	int		end;
 	int		resi;
 
-	i = 0;
-	j = 0;
+	start = 0;
+	while (s1[start] && ft_strstrchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1) - 1;
+	while (end > start && ft_strstrchr(set, s1[end]))
+		end--;
+	res = malloc((end - start + 2) * sizeof(char));
+	if (res == NULL)
+		return (NULL);
 	resi = 0;
-	while (ft_strstrchr(set, s1[i]))
-		i++;
-	while (!(ft_strstrchr(set, s1[i])))
-	{
-		j++;
-		i++;
-	}
-	i -= j;
-	res = malloc(j * sizeof(char));
-	while (!(ft_strstrchr(set, s1[i])))
-	{
-		res[resi] = s1[i];
-		resi++;
-		i++;
-	}
+	while (start <= end)
+		res[resi++] = s1[start++];
+	res[resi] = '\0';
 	return (res);
 }
 
