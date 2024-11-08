@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:15:56 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 15:01:39 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:17:52 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	uc;
 
 	i = 0;
+	uc = (unsigned char)c;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if ((unsigned char)s[i] == uc)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (c == '\0')
+	if (uc == '\0')
 		return ((char *)(s + i));
 	return ((void *)(0));
 }
