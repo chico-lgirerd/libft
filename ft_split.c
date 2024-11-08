@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:22:16 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 15:32:48 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 16:02:26 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,14 @@ char	*put_word(const char *s, char c)
 	return (word);
 }
 
+char	**free_mem(char **res, int i)
+{
+	while (i > 0)
+		free(res[--i]);
+	free(res);
+	return (NULL);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**res;
@@ -69,12 +77,7 @@ char	**ft_split(const char *s, char c)
 		{
 			res[i] = put_word(s, c);
 			if (!res[i])
-			{
-				while (i > 0)
-					free(res[--i]);
-				free(res);
-				return (NULL);
-			}
+				return (free_mem(res, i));
 			i++;
 			while (*s && (*s != c))
 				s++;
