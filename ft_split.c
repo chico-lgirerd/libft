@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:22:16 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 15:01:59 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 15:32:48 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	count_words(const char *s, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*s)
 	{
 		while (*s && (*s == c))
-		    s++;
+			s++;
 		if (*s && !((*s == c)))
 		{
 			count++;
 			while (*s && !((*s == c)))
-			    s++;
+				s++;
 		}
 	}
 	return (count);
@@ -41,13 +41,13 @@ char	*put_word(const char *s, char c)
 		i++;
 	word = malloc((i + 1) * sizeof(char));
 	if (!word)
-        return (NULL);
-    i = 0;
-    while (s[i] && s[i] != c)
-    {
-        word[i] = s[i];
-        i++;
-    }
+		return (NULL);
+	i = 0;
+	while (s[i] && s[i] != c)
+	{
+		word[i] = s[i];
+		i++;
+	}
 	word[i] = '\0';
 	return (word);
 }
@@ -59,25 +59,25 @@ char	**ft_split(const char *s, char c)
 
 	res = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!res)
-        return (NULL);
-    i = 0;
+		return (NULL);
+	i = 0;
 	while (*s)
 	{
 		while (*s && (*s == c))
-		    s++;
+			s++;
 		if (*s && (*s != c))
 		{
 			res[i] = put_word(s, c);
-            if (!res[i])
-            {
-                while (i > 0)
-                    free(res[--i]);
-                free(res);
-                return (NULL);
-            }
+			if (!res[i])
+			{
+				while (i > 0)
+					free(res[--i]);
+				free(res);
+				return (NULL);
+			}
 			i++;
 			while (*s && (*s != c))
-			    s++;
+				s++;
 		}
 	}
 	res[i] = NULL;
