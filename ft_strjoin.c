@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:01:31 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 20:35:58 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 12:14:47 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	res = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	res = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
 	if (res == NULL)
 		return ((void *)(0));
 	while (s1[i])
@@ -34,6 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
+	res[i] = '\0';
 	return (res);
 }
 
