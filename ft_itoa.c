@@ -46,6 +46,14 @@ char	*reverse(char *str)
 	return (str);
 }
 
+char	*num_handler(int n)
+{
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	else
+		return (ft_strdup("0"));
+}
+
 char	*ft_itoa(int nb)
 {
 	char	*res;
@@ -53,16 +61,14 @@ char	*ft_itoa(int nb)
 	int		sign;
 	int		len;
 
-	if (nb == -2147483648)
-		return (ft_strdup("-2147483648"));
+	if (nb == -2147483648 || nb == 0)
+		return (num_handler(nb));
 	len = num_len(nb);
 	res = malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
 	i = 0;
 	sign = (nb < 0);
-	if (nb == 0)
-		res[i++] = '0';
 	if (sign)
 		nb = -nb;
 	while (nb)
