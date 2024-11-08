@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:30:18 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 22:16:29 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 16:20:13 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*p;
+	int				i;
+	char			*p;
+	unsigned char	uc;
 
 	p = NULL;
+	uc = (unsigned char)c;
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -27,7 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 			p = ((char *)(s + i));
 		i++;
 	}
-	if ((char)c == '\0')
+	if (uc == '\0')
 		return ((char *)(s + i));
 	return (p);
 }
