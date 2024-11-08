@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:17:14 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 21:11:43 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 16:36:21 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	d = malloc((ft_strlen(s) * sizeof(char)) + 1);
+	if (d == NULL)
+		return (NULL);
 	while (i < ft_strlen(s))
 	{
 		d[i] = s[i];
