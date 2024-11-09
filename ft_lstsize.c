@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 20:43:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 20:45:55 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 20:48:54 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int ft_lstsize(t_list *lst)
 {
-    int size;
+    int count;
+    
+    count = 1;
     
 }
