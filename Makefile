@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:41:01 by lgirerd           #+#    #+#              #
-#    Updated: 2024/11/12 15:00:42 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/11/12 16:18:44 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,8 @@ SOURCES_BONUS = ft_lstnew.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
 				ft_lstadd_back.c \
-				ft_lstdelone.c
+				ft_lstdelone.c \
+				ft_lstclear.c
 
 OBJECTS = $(SOURCES:.c=.o)
 OBJECTS_BONUS = $(SOURCES_BONUS:.c=.o)
