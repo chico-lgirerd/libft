@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:26:29 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/12 14:35:28 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 16:48:21 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		while (current->next != NULL)
 			current = current->next;
 		current->next = new;
-		new->next = NULL;
 	}
 }
