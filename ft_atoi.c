@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgirerd <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:15:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 13:37:46 by lgirerd          ###   ########.fr       */
+/*   Updated: 2024/11/19 18:05:50 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isspace(char c)
 {
@@ -25,6 +27,8 @@ int	count_numbers(char *str)
 	n = 0;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
+		if (n > (LONG_MAX - (str[i] - '0')) / 10)
+			return (LONG_MAX);
 		n = (n * 10) + (str[i] - '0');
 		i++;
 	}
