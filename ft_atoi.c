@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:15:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/20 13:14:36 by lgirerd          ###   ########lyon.fr   */
+/*   Created: 2024/11/20 13:29:53 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/11/20 13:45:03 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,33 @@
 
 int	ft_isspace(char c)
 {
-	return (c == '\t' || c == '\n' || c == '\r'
-		|| c == '\f' || c == '\v' || c == ' ');
+	return (c == '\t' || c == '\r' || c == '\n' 
+	|| c == '\f' || c == '\v' || c == ' ');
 }
 
-int	count_numbers(char *str)
+int	ft_atoi(const char *str)
 {
-	int	n;
-	int	i;
-
-	i = 0;
-	n = 0;
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		n = (n * 10) + (str[i] - '0');
-		i++;
-	}
-	if (n > INT_MAX)
-		return (INT_MAX);
-	if (n < INT_MIN)
-		return (INT_MIN);
-	return (n);
-}
-
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	minus_count;
-	int	sign_count;
-
-	sign_count = 0;
-	minus_count = 0;
+	size_t	i;
+	int		sign;
+	long	n;
+	
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	while (str[i] == '-' || str[i] == '+')
+	sign = 1;
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			minus_count++;
-		else if (str[i] == '+')
-			sign_count++;
+			sign *= -1;
 		i++;
 	}
-	if ((str[i] >= '0' && str[i] <= '9') && (sign_count + minus_count < 2))
+	n = 0;
+	while (ft_isdigit(str[i]))
 	{
-		if (minus_count == 1)
-			return (-count_numbers(str + i));
-		else
-			return (count_numbers(str + i));
+		if (((n * 10 + str[i] - '0' )/ 10 != n))
+			return (((LONG_MAX * (sign > 0)) + ((LONG_MIN) * (sign < 0))));
+		n = n * 10 + str[i] - '0';
+		i++;
 	}
-	return (0);
+	return (n * sign);
 }
