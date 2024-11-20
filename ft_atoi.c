@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:15:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/19 18:05:50 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/20 13:14:36 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ int	count_numbers(char *str)
 	n = 0;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (n > (LONG_MAX - (str[i] - '0')) / 10)
-			return (LONG_MAX);
 		n = (n * 10) + (str[i] - '0');
 		i++;
 	}
+	if (n > INT_MAX)
+		return (INT_MAX);
+	if (n < INT_MIN)
+		return (INT_MIN);
 	return (n);
 }
 
