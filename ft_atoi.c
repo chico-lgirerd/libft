@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:29:53 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/20 13:45:03 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/20 13:48:13 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_isspace(char c)
 {
-	return (c == '\t' || c == '\r' || c == '\n' 
-	|| c == '\f' || c == '\v' || c == ' ');
+	return (c == '\t' || c == '\r' || c == '\n'
+		|| c == '\f' || c == '\v' || c == ' ');
 }
 
 int	ft_atoi(const char *str)
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	size_t	i;
 	int		sign;
 	long	n;
-	
+
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 	n = 0;
 	while (ft_isdigit(str[i]))
 	{
-		if (((n * 10 + str[i] - '0' )/ 10 != n))
+		if (((n * 10 + str[i] - '0' ) / 10 != n))
 			return (((LONG_MAX * (sign > 0)) + ((LONG_MIN) * (sign < 0))));
 		n = n * 10 + str[i] - '0';
 		i++;
