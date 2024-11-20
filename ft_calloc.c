@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:24:48 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/19 18:07:04 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/11/20 13:09:31 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	total_size;
 	void	*tab;
 
+	if (size != 0 && nmemb > SIZE_MAX / size)
 	total_size = nmemb * size;
-	if (total_size > SIZE_MAX)
-		return (malloc(0));
 	tab = malloc(total_size);
 	if (tab == NULL)
 		return (NULL);
