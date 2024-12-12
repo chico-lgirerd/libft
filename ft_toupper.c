@@ -6,11 +6,9 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:59:56 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 15:18:40 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/12 15:32:38 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:22:16 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 16:02:26 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/12 15:22:40 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 int	count_words(const char *s, char c)
 {

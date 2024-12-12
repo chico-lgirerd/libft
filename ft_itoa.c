@@ -6,11 +6,12 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:36:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/08 17:19:58 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/12 15:19:26 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 int	num_len(int nb)
 {
