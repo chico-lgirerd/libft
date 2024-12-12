@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:41:01 by lgirerd           #+#    #+#              #
-#    Updated: 2024/11/13 16:46:33 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/12/12 15:14:58 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ $(NAME): $(OBJECTS)
 bonus: $(OBJECTS_BONUS)
 	ar rcs $(NAME) $(OBJECTS_BONUS)
 
-%.o: %.c libft.h
+%.o: %.c libft.h Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
