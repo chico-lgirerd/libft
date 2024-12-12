@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 15:00:51 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/12 15:19:53 by lgirerd          ###   ########lyon.fr   */
+/*   Created: 2024/11/04 15:50:40 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/12/12 16:26:51 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../../include/libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	t_list	*temp;
+	unsigned long	i;
+	int				j;
 
-	if (lst == NULL || del == NULL)
-		return ;
-	temp = lst;
-	lst = lst->next;
-	temp->next = NULL;
-	del(temp->content);
-	free(temp);
+	i = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while ((i + j) < len && little[j] == big[i + j])
+		{
+			if (little[j + 1] == '\0')
+				return ((char *)big + i);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }

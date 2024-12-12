@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:19:20 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/05 18:44:16 by lgirerd          ###   ########lyon.fr   */
+/*   Created: 2024/11/08 20:22:50 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/12/12 16:26:51 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
+#include <stdlib.h>
 
-int	ft_isalnum(int c)
+t_list	*ft_lstnew(void *content)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	struct s_list	*newlist;
+
+	newlist = malloc(sizeof(struct s_list));
+	if (newlist == NULL)
+		return (NULL);
+	newlist->content = content;
+	newlist->next = NULL;
+	return (newlist);
 }

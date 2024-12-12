@@ -6,11 +6,11 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:17:32 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/12 17:19:35 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/12 16:26:51 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

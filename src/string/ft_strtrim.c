@@ -6,11 +6,11 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:39:47 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/12 15:32:19 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/12 16:26:51 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 #include <stdlib.h>
 
 int	ft_strstrchr(const char *set, const char c)

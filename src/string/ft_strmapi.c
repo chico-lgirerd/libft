@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:43:03 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/11/11 15:10:10 by lgirerd          ###   ########lyon.fr   */
+/*   Created: 2024/11/05 16:15:51 by lgirerd           #+#    #+#             */
+/*   Updated: 2024/12/12 16:26:51 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
+#include <stdlib.h>
 
-int	ft_lstsize(t_list *lst)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int				count;
-	struct s_list	*current;
+	unsigned int	i;
+	size_t			slen;
+	char			*res;
 
-	count = 0;
-	current = lst;
-	while (current != NULL)
+	slen = ft_strlen(s);
+	res = malloc(slen + 1 * sizeof(char));
+	if (res == NULL || f == NULL)
+		return ((void *)(0));
+	i = 0;
+	while (s[i])
 	{
-		count++;
-		current = current->next;
+		res[i] = f(i, s[i]);
+		i++;
 	}
-	return (count);
+	res[i] = '\0';
+	return (res);
 }
