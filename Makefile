@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:41:01 by lgirerd           #+#    #+#              #
-#    Updated: 2024/12/12 16:24:48 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/12/16 17:29:14 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ IS_SRCS =   ft_isalnum.c \
 
 LINKLIST_DIR = linked_lists/
 LINKLIST_SRCS = ft_lstadd_back.c \
-				ft_lstadd_back.c \
+				ft_lstadd_front.c \
 				ft_lstclear.c \
 				ft_lstdelone.c \
 				ft_lstiter.c \
@@ -74,24 +74,16 @@ STRING_SRCS = 	ft_split.c \
 ############################# DIRECTORIES ##############################
 
 SRCS_DIR = srcs/
-SRCS =	$(addprefix $(CONV_DIR), $(CONV_SRCS)) \
-		$(addprefix $(FD_DIR), $(FD_SRCS)) \
-		$(addprefix $(IS_DIR), $(IS_SRCS)) \
-		$(addprefix $(LINKLIST_DIR), $(LINKLIST_SRCS)) \
-		$(addprefix $(MEMORY_DIR), $(MEMORY_SRCS)) \
-		$(addprefix $(STRING_DIR), $(STRING_SRCS)) 
+SRCS =	$(addprefix $(SRCS_DIR)$(CONV_DIR), $(CONV_SRCS)) \
+		$(addprefix $(SRCS_DIR)$(FD_DIR), $(FD_SRCS)) \
+		$(addprefix $(SRCS_DIR)$(IS_DIR), $(IS_SRCS)) \
+		$(addprefix $(SRCS_DIR)$(LINKLIST_DIR), $(LINKLIST_SRCS)) \
+		$(addprefix $(SRCS_DIR)$(MEMORY_DIR), $(MEMORY_SRCS)) \
+		$(addprefix $(SRCS_DIR)$(STRING_DIR), $(STRING_SRCS)) 
 
 OBJS_DIR = .objs/
-OBJS_NAMES = $(SRCS:.c=.o)
-OBJS_FOLDER =			$(addprefix $(OBJS_DIR), $(CONV_DIR) \
-                        $(FD_DIR) \
-                        $(IS_DIR) \
-                        $(LINKLIST_DIR) \
-                        $(MEMORY_DIR) \
-                        $(STRING_DIR))
 
-OBJS = $(addprefix $(OBJS_DIR), $(OBJS_NAMES))
-
+OBJS = $(SRCS:$(SRCS_DIR)%.c=$(OBJS_DIR)%.o)
 DEPS := $(OBJS:.o=.d)
 
 ############################# RULES ##############################
@@ -99,19 +91,25 @@ DEPS := $(OBJS:.o=.d)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $@ $(OBJS)
+	ar -rcs $@ $^
 
-$(OBJS_DIR)%.o:$(SRCS_DIR)%.c
-	mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	@mkdir -p $(OBJS_DIR)$(CONV_DIR)
+	@mkdir -p $(OBJS_DIR)$(FD_DIR)
+	@mkdir -p $(OBJS_DIR)$(IS_DIR)
+	@mkdir -p $(OBJS_DIR)$(LINKLIST_DIR)
+	@mkdir -p $(OBJS_DIR)$(MEMORY_DIR)
+	@mkdir -p $(OBJS_DIR)$(STRING_DIR)
+	@echo "Compiling $<"; $(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean :
 	rm -rf $(OBJS_DIR)
 
 fclean :    clean
-	      rm -f $(NAME)
+	rm -f $(NAME)
 
-re : fclean
-	make all
+re : fclean all
+
+-include $(DEPS)
 
 .PHONY :  all clean fclean re
