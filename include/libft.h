@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/17 13:58:31 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/18 16:34:05 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
-#include <stdarg.h>
-
+# include <stdarg.h>
 
 /* --- LINKED LISTS ---*/
 
@@ -95,4 +94,5 @@ int		ft_handler(va_list args, const char format);
 void	ft_putchar(int c);
 int		ft_printunsigned(unsigned int n);
 int		num_len(int nb);
+
 #endif
