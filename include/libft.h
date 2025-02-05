@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/17 13:58:31 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2025/02/05 15:32:19 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define LIBFT_H
 
 # include <stddef.h>
-#include <stdarg.h>
+# include <stdarg.h>
 
-
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 /* --- LINKED LISTS ---*/
 
 typedef struct s_list
@@ -41,6 +43,7 @@ int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+long	ft_atol(char *str);
 
 /* --- STRING MANIPULATING --- */
 
@@ -95,4 +98,11 @@ int		ft_handler(va_list args, const char format);
 void	ft_putchar(int c);
 int		ft_printunsigned(unsigned int n);
 int		num_len(int nb);
+
+/* --- GET_NEXT_LINE --- */
+int		line_checker(char *str);
+char	*get_next_line(int fd);
+char	*ft_strdup_mod(const char *s);
+char	*ft_strjoin_mod(char *s1, char *s2);
+
 #endif
