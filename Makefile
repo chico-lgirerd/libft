@@ -6,13 +6,18 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:41:01 by lgirerd           #+#    #+#              #
-#    Updated: 2025/02/05 15:29:20 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2025/03/26 14:38:17 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+
+GREEN  			= \033[1;32m
+RESET  			= \033[0m
+TOTAL			= $(words $(SRCS))
+COUNT			= 0
 
 ############################# SOURCES #############################
 
@@ -116,7 +121,12 @@ $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	@mkdir -p $(OBJS_DIR)$(STRING_DIR)
 	@mkdir -p $(OBJS_DIR)$(PRINTF_DIR)
 	@mkdir -p $(OBJS_DIR)$(GNL_DIR)
-	@echo "Compiling $<"; $(CC) $(CFLAGS) -MMD -c $< -o $@
+	@$(eval COUNT=$(shell echo $$(($(COUNT) + 1))))
+	@BAR=$$(printf "#%.0s" $$(seq 1 $$(($(COUNT) * 50 / $(TOTAL))))) && \
+	SPACES=$$(printf " %.0s" $$(seq 1 $$((50 - $$(($(COUNT) * 50 / $(TOTAL))))))) && \
+	printf "\r$(GREEN)libft: [$$BAR$${SPACES:+$$SPACES}] $(COUNT)/$(TOTAL)$(RESET)"
+	@$(CC) $(CFLAGS) -MMD -c $< -o $@
+	@$(if $(filter $(COUNT), $(TOTAL)), echo "",)
 
 clean :
 	rm -rf $(OBJS_DIR)
